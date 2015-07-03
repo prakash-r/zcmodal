@@ -1,3 +1,15 @@
+(function($) {
+$(window).bind("keydown",function(event){
+		var k = event.keyCode;
+		if(k==27){
+			var modal = $zcmodal.getTopPopup();
+			if(modal && modal.isCloseOnEsc()){
+				modal.close();
+			}
+		}
+		stopEventBubbling(event);
+	});
+
 $zcmodal = {
 	_modalStack: [],
 	_theme : 'default',
@@ -327,4 +339,4 @@ $.zcmodal = function(opts) {
 	var instance = new ZCModal(undefined, opts);
 	return instance;
 };
-	
+})(window.jQuery);	
