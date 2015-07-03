@@ -1,0 +1,161 @@
+
+.modalDefaultBody{
+	display:none;
+}
+
+body.zcmodal_lock {
+    overflow: hidden;
+}
+body.zcmodal_active .zcmodal-bg {
+    -webkit-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+}
+body.zcmodal_active .zcmodal-overlay {
+    opacity: 0.999;
+}
+body.zcmodal_active .popupbox {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}
+.popupbox-overlay {
+	position: fixed;
+	z-index: 999;
+	top: -5000px;
+	right: -5000px;
+	bottom: -5000px;
+	left: -5000px;
+	background: rgba(000, 000, 000, 0.08);
+}
+
+.popupbox-wrapper {
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow: auto;
+	text-align: center;
+	
+}
+
+.popupbox, .popupbox-wrapper:after {
+	vertical-align: middle;
+	display:inline-block;
+}
+.popupbox-wrapper:after {
+	height:100%;
+	margin-left: -0.05em;
+	content: "";
+}
+
+.popupboxOuter{
+	text-align:left;
+	border:1px solid rgba(0,0,0,0.15);
+	box-shadow:0 0 3px rgba(0,0,0,0.1);
+	display:block;
+	margin:10px;
+  background:#fff;
+	padding:20px;
+}
+
+.popupHeader{
+	border-bottom:1px solid #ececec;
+	padding:5px 0px 10px; overflow:auto;
+	text-align:left;
+	font-weight:bold; font-size:16px;
+}
+
+.popupClose{
+	float: right;
+	cursor: pointer;
+	color: #8E8E8E;
+	position: absolute;
+	right: 45px;
+	top: 40px;
+}
+
+.popupClose:hover{
+	color: #FF0000;
+}
+
+.popupConentContainer{
+	padding:5px 10px 10px 10px;
+	text-align:left;
+	display:block;
+	line-height:1.7;
+}
+
+.popupFooter{
+	overflow:auto;
+	padding:15px 0;
+	border-top:1px solid #f4f4f4;
+	text-align:center;
+}
+
+.saveButton, .cancelButton {
+	background: #333;
+	border: 1px solid #000;
+	color: #fff; min-width:70px;
+	padding: 5px 10px; text-align:center;
+	margin-right: 10px;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.cancelButton {
+	background: #e6e6e6;
+	color: #000;
+	border: 1px solid #ddd;
+}
+
+
+
+.alert-popup, .confirm-popup, .info-popup{
+	min-width: 350px;
+	max-width: 600px;padding-bottom: 5px;
+}
+
+.alertMsg, .confirmMsg, .infoMsg{
+	overflow:auto;
+	padding:5px 0 10px;
+}
+
+.alertMsg i, .confirmMsg i, .infoMsg i{
+	font-size:40px !important;
+	float:left;
+	color:#F5B783;
+	margin-top: 2px;
+	margin-right: 9px;
+}
+
+.fa-alert{
+	color:green;
+}
+
+.alertMsg p, .confirmMsg p, .infoMsg p, .alertMsg span, .confirmMsg span, .infoMsg span{
+	padding: 3px 10px;
+	color: #333;
+	font-weight:800;
+	overflow: hidden;
+	line-height: 1.5; font-size:14px;
+}
+
+.alertMsg p, .alertMsg span, .infoMsg p, .infoMsg span, .confirmMsg p{
+	 margin-top:5px; margin-bottom:0; padding-bottom:0;
+}
+
+.alertMsg span,.infoMsg span {
+	margin-top:0;
+}
+
+.alertMsg span, .confirmMsg span, .infoMsg span{
+	color:#999;font-weight: normal;
+	 font-size:13px; display:block;padding-left: 10px;
+}
