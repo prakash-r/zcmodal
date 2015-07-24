@@ -127,9 +127,9 @@ $.zcmodal({
 | showInFullScreen| set true to occupy full screen used for add/edit record in view | false|
 | showPreloader | enable this to show preloader while using ajax calls| false|
 | type | this can be *DEFAULT_MODAL,CLONE_MODAL,AJAX_MODAL, JIT_MODAL* | DEFAULT_MODAL|
-| ajaxuri| url to send ajax call for **AJAX_MODAL**|  null |
-| buildDOM | it can be string/function that gives body dom html string for **JIT_MODAL** | null|
-| buttons | this is an array of buttons objects with name, type and action. [Usage](#buttons)| []|
+| ajaxuri| url to send ajax call for [**AJAX_MODAL**](#ajax_modal)|  null |
+| buildDOM | it can be string/function that gives body dom html string for [**JIT_MODAL**](#jit_modal) | null|
+| buttons | this is an array of buttons objects with name, type and action. [**Usage**](#buttons)| []|
 |bodyClass  | class name applied to the body to made custom style | null|
 | beforeShow| it is a function that will call before showing popup used for event registration of body elements | null |
 |beforeClose | function call before all form of close like escape, close icon,cancel..etc | null|
