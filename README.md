@@ -6,13 +6,13 @@ It is a fully customizable javascript plugin to generate popup window.
 
 This plugin helps to generate four types of modal window.
 
-1. *DEFAULT_MODAL*
+1. [*DEFAULT_MODAL*](#default_modal)
   - Basic modal which get body source from the target element
-2. *CLONE_MODAL*
+2. [*CLONE_MODAL*](#clone_modal)
   - This clones the target element and set as popup window body
-3. *AJAX_MODAL*
+3. [*AJAX_MODAL*](#ajax_modal)
   - The type of modal used jquery ajax call to get the modal body, here ajax response should be html
-4. *JIT_MODAL*
+4. [*JIT_MODAL*](#jit_modal)
   - Just In Time modal generate modal window on the fly. The build dom method provides the body html
 
 Now lets see the usage of each type of modal
@@ -93,9 +93,9 @@ $('#modalBody').zcmodal({
 ```js
 [
   {
-    name : "Ok",
-    type : Constants.MODAL_SUBMIT,
-    action : function(modalBody){
+    name : "Ok",  // Name of the button
+    type : Constants.MODAL_SUBMIT,  // type of the button
+    action : function(modalBody){ // action on clicking the button
       // Do something when clicking Ok
     }
   },
@@ -129,7 +129,7 @@ $('#modalBody').zcmodal({
 | type | this can be *DEFAULT_MODAL,CLONE_MODAL,AJAX_MODAL, JIT_MODAL* | DEFAULT_MODAL|
 | ajaxuri| url to send ajax call for **AJAX_MODAL**|  null |
 | buildDOM | it can be string/function that gives body dom html string for **JIT_MODAL** | null|
-| buttons | this is an array of buttons objects with name, type and action | []|
+| buttons | this is an array of buttons objects with name, type and action. [Usage](#buttons)| []|
 |bodyClass  | class name applied to the body to made custom style | null|
 | beforeShow| it is a function that will call before showing popup used for event registration of body elements | null |
 |beforeClose | function call before all form of close like escape, close icon,cancel..etc | null|
