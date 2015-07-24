@@ -1,14 +1,28 @@
 (function($) {
 	$(window).bind("keydown",function(event){
-			var k = event.keyCode;
-			if(k==27){
-				var modal = $zcmodal.getTopPopup();
-				if(modal && modal.isCloseOnEsc()){
-					modal.close();
-				}
+		var k = event.keyCode;
+		if(k==27){
+			var modal = $zcmodal.getTopPopup();
+			if(modal && modal.isCloseOnEsc()){
+				modal.close();
 			}
-			stopEventBubbling(event);
-		});
+		}
+		stopEventBubbling(event);
+	});
+	
+	function stopEventBubbling(event) {
+		if($.browser.msie) {
+			if(event == null){
+				return;
+			}
+			event.cancelBubble = true;
+			if(event.stopPropagation){
+				event.stopPropagation();
+			}
+		} else{
+			event.stopPropagation();
+		}
+	};
 	
 	$zcmodal = {
 		_modalStack: [],
@@ -183,15 +197,12 @@
 			var containerStyle = (self.$container[0]).style;
 			containerStyle.visibility = "visible";
 			
-	        self.$overlay.find(".popupConentContainer")[0].innerHTML = self.$modalBody;
-	        if(options.showInFullScreen){
-	        	$('#zc-component').append(self.$overlay)
-	        }else{
-	        	self.$body.append(self.$overlay);	
-	        }
-	//	        self.$body.append(self.$overlay);
-	//	        document.body.innerHTML += self.$overlay.parend[0].innerHTML;
-	//	        ZCUtil.evalJS(self.$overlay.find(".modalBody").find("script").html());
+	        	self.$overlay.find(".popupConentContainer")[0].innerHTML = self.$modalBody;
+			if(options.showInFullScreen){
+	        		$('#zc-component').append(self.$overlay)
+	        	}else{
+	        		self.$body.append(self.$overlay);	
+	        	}
 		}
 		
 		
@@ -249,7 +260,7 @@
 			}
 		}
 		
-	//		validateModal();
+	//	validateModal();
 		buildDOM();
 		addEventListeners();
 		lockScreen();
@@ -259,10 +270,10 @@
 		self._optionCache.type = options.type;
 		self.$overlay.show().data(self);
 		self.index = $zcmodal._modalStack.push(self) - 1;
-	self.$overlay.show();
-	setTimeout(function() {
-	    self.$body.addClass("zcmodal_active");
-	    self.$container.trigger("opened");
+		self.$overlay.show();
+		setTimeout(function() {
+	    	self.$body.addClass("zcmodal_active");
+	    	self.$container.trigger("opened");
 	}, ($zcmodal.hasInstance() ? 0 : 50));
 	
 	};
