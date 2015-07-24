@@ -67,7 +67,7 @@ $('#modalBody').zcmodal({
 ### AJAX_MODAL
 
 ```js
-$('#modalBody').zcmodal({
+$.zcmodal({
   type : Constants.AJAX_MODAL,
   title : "Ajax Modal",
   ajaxuri : "http://mydomain.com/pages/customers/profile/get",
@@ -78,7 +78,7 @@ $('#modalBody').zcmodal({
 ### JIT_MODAL
 
 ```js
-$('#modalBody').zcmodal({
+$.zcmodal({
   type : Constants.JIT_MODAL,
   title : "Just In Time Modal",
   buildDOM : function(){
